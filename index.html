@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Physically Inspired Gaussian Splatting for HDR Novel View Synthesis">
+  <meta name="keywords" content="Physically Inspired Gaussian Splatting for HDR Novel View Synthesis, PhysHDR-GS, HDR Novel View Synthesis, 3D Gaussian Splatting">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Physically Inspired Gaussian Splatting for HDR Novel View Synthesis</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="./static/css/bootstrap-4.4.1.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  
+  
+  
+  
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/72.png">
+
+  
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/app.js"></script>
+  <script src="./static/js/video_comparison.js"></script>
+
+  <link rel="stylesheet" href="./static/css/dics.original.css">
+  <script src="./static/js/event_handler.js"></script>
+  <script src="./static/js/dics.original.js"></script>
+ 
+
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+        
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">Physically Inspired Gaussian Splatting for HDR Novel View Synthesis</h2>
+          <br>
+          <h2 class="title is-4" style="margin-top: 0; margin-bottom: 0">CVPR 2026</h2>
+          <br>
+          <div class="is-size-5 publication-authors">    
+            <span class="author-block">
+                <a href="https://huimin-zeng.github.io/">Huimin Zeng</a>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+                <a href="https://yueb17.github.io/">Yue Bai</a>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+                <a href="">Hailing Wang</a>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+                <a href="https://www1.ece.neu.edu/~yunfu/">Yun Fu</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup></sup>Northeastern University</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./assets/paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="./assets/supp.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Supp</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ZeldaM1/PhysHDR-GS"
+                   class="external-link button is-normal is-rounded is-dark disabled">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+      
+            <!-- <img src="./assets/teaser.png" class="center" width="100%"> -->
+          <h2 class="subtitle has-text-centered" style="margin-top: 15px">
+            TL;DR: We present PhysHDR-GS, a physically inspired HDR novel view synthesis framework that models scene appearance via intrinsic reflectance and adjustable ambient illumination, achieving state-of-the-art HDR reconstruction quality with real-time rendering speed (up to 76 FPS).
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            High dynamic range novel view synthesis (HDR-NVS) reconstructs scenes with dynamic details by fusing multi-exposure low dynamic range (LDR) views, yet it struggles to capture ambient illumination-dependent appearance. Implicitly supervising HDR content by constraining tone-mapped results fails in correcting abnormal HDR values, and results in limited gradients for Gaussians in under/over-exposed regions. To this end, we introduce PhysHDR-GS, a physically inspired HDR-NVS framework that models scene appearance via intrinsic reflectance and adjustable ambient illumination. PhysHDR-GS employs a complementary image-exposure (IE) branch and Gaussian-illumination (GI) branch to faithfully reproduce standard camera observations and capture illumination-dependent appearance changes, respectively. During training, the proposed cross-branch HDR consistency loss provides explicit supervision for HDR content, while an illumination-guided gradient scaling strategy mitigates exposure-biased gradient starvation and reduces under-densified representations. Experimental results across realistic and synthetic datasets demonstrate our superiority in reconstructing HDR details (e.g., a PSNR gain of 2.04 dB over HDR-GS), while maintaining real-time rendering speed (up to 76 FPS).
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+  <!-- Motivation. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-full-width">
+      <h2 class="title is-3" style="margin-top: -20px">Motivation</h2>
+      <img src="./assets/teaser.png" class="center" width="50%">
+      <div class="content has-text-justified">
+        <p style="margin-top: 10px">
+          Camera exposure and ambient illumination both shape the dynamic range of a scene, but in complementary ways. A change in exposure <b>Δ<i>t</i></b> induces a <b>global</b> intensity change Δ<i>I</i><sub>HDR</sub> across the entire image, while a change in ambient illumination <b>Δ<i>L</i><sub>a</sub></b> triggers <b>local</b>, lighting-conditioned radiance variation Δ<i>Î</i><sub>HDR</sub> (e.g., on the nameplate of the lucky cat). Their different response patterns reveal complementary ways of modeling dynamic-range details, motivating our dual-branch framework that jointly controls camera exposure in 2D image space and ambient illumination in 3D Gaussian space.
+        </p>
+      </div>
+    </div>
+  </div>
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+            <br>
+          <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+    
+          <img src="./assets/overview.png" class="center" width="100%">
+          <div class="content has-text-justified">
+            <p style="margin-top: 10px">
+              As shown above, PhysHDR-GS factorizes the Gaussian color into intrinsic hemispherical-directional reflectance <i>H</i><sub>r</sub> and adjustable ambient illumination <i>L</i><sub>a</sub>, grounded in physically-based rendering. The framework is driven by three key components:
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 30px; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 10px;">
+            <div style="flex: 1; min-width: 280px; max-width: 30%; text-align: left;">
+              <h3 class="title is-5" style="margin-bottom: 8px;">Physical Radiance Composition</h3>
+              <p style="font-size: 0.95rem;">
+                An MLP-based radiance composer produces HDR Gaussian color from reflectance and illumination. The <b>IE branch</b> globally scales the projected HDR image by camera exposure <i>t</i>; the <b>GI branch</b> relights the scene via a virtual illumination modulator, locally rescaling radiance intensity to avoid saturation. Together, they cover a higher dynamic range.
+              </p>
+            </div>
+            <div style="flex: 1; min-width: 280px; max-width: 30%; text-align: left;">
+              <h3 class="title is-5" style="margin-bottom: 8px;">Self-Consistent HDR Fusion</h3>
+              <p style="font-size: 0.95rem;">
+                A lightweight tone mapper fuses complementary global/local LDR outputs from both branches. A <b>cross-branch HDR consistency loss</b> aligns the IE and GI HDR predictions in the pre-tone-mapped domain, providing explicit HDR self-supervision without ground truth and correcting abnormal saturated values.
+              </p>
+            </div>
+            <div style="flex: 1; min-width: 280px; max-width: 30%; text-align: left;">
+              <h3 class="title is-5" style="margin-bottom: 8px;">Illumination-Guided Gradient Scaling</h3>
+              <p style="font-size: 0.95rem;">
+                Gaussians in over/under-exposed regions receive small gradients due to the flat slope of the tone mapping curve, causing under-densification. We observe that illumination deviation |<i>L</i><sub>a</sub>&minus;<i>L̂</i><sub>a</sub>| is inversely correlated with gradient magnitude. A scaling factor <i>s</i><sub>a</sub> amplifies per-Gaussian gradients proportionally, preventing insufficient splitting.
+              </p>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+      <!--/ Method. -->
+
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results. -->
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Results</h2>
+
+        <h3 class="title is-4" style="margin-bottom: 10px">Quantitative Results</h3>
+        <div class="content has-text-justified">
+          <p>
+            We evaluate on three benchmarks: <b>HDR-NeRF-Real</b>, <b>HDR-Plenoxels-Real</b>, and <b>HDR-NeRF-Syn</b>, under two exposure settings (exp3: three alternating exposures; exp1: fixed single exposure). Our Scaffold-GS variant <b>Ours†</b> achieves the overall best performance, e.g., a PSNR gain of <b>0.59 dB</b> on HDR-NeRF-Real (LDR-OE / exp3) over GaussHDR†. The vanilla 3DGS variant <b>Ours</b> uses lower GPU memory (<b>3,274 MB</b> vs. 5,596 MB for GaussHDR) and achieves faster rendering (<b>76 FPS</b> vs. 53 FPS for GaussHDR) while still delivering overall superior performance.
+          </p>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 20px; margin-bottom: 10px">Efficiency Analysis</h3>
+        <div class="content has-text-justified">
+          <p style="margin-bottom: 8px">Measured on a single NVIDIA A6000 GPU at 400×400 resolution:</p>
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 20px;">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9rem; text-align: center;">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Rendering (ms)</th>
+                <th>Throughput (FPS)</th>
+                <th>Training (min)</th>
+                <th>Memory (MB)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>HDR-NeRF</td><td>4189</td><td>0.24</td><td>500</td><td>11049</td></tr>
+              <tr><td>HDR-GS</td><td>9</td><td>117</td><td>10</td><td>5014</td></tr>
+              <tr><td>GaussHDR</td><td>19</td><td>53</td><td>28</td><td>5596</td></tr>
+              <tr><td>GaussHDR†</td><td>26</td><td>38</td><td>21</td><td>6221</td></tr>
+              <tr style="font-weight: 600;"><td>Ours</td><td>13</td><td><b>76</b></td><td>15</td><td><b>3274</b></td></tr>
+              <tr style="font-weight: 600;"><td>Ours†</td><td>19</td><td>53</td><td>18</td><td>3920</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 20px; margin-bottom: 10px">Ablation Studies</h3>
+        <div class="content has-text-justified">
+          <p>
+            Starting from the IE-only baseline, each proposed component yields consistent PSNR gains across both benchmarks:
+          </p>
+        </div>
+        <div style="overflow-x: auto; margin-bottom: 10px;">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth" style="font-size: 0.9rem; text-align: center;">
+            <thead>
+              <tr>
+                <th>Configuration</th>
+                <th colspan="2">HDR-NeRF-Real (PSNR)</th>
+                <th colspan="2">HDR-Plenoxels-Real (PSNR)</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>LDR-OE</th><th>LDR-NE</th>
+                <th>LDR-OE</th><th>LDR-NE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>IE branch (baseline)</td><td>36.18</td><td>33.38</td><td>32.73</td><td>29.47</td></tr>
+              <tr><td>+ GI branch</td><td>36.27</td><td>33.46</td><td>32.83</td><td>29.34</td></tr>
+              <tr><td>+ HDR Consistency Loss</td><td>36.43</td><td>33.84</td><td>32.97</td><td>29.45</td></tr>
+              <tr style="font-weight: 600;"><td>+ Illumination-Guided Gradient Scaling (Full)</td><td><b>36.91</b></td><td><b>34.15</b></td><td><b>33.06</b></td><td><b>29.76</b></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+    <!--/ Results. -->
+
+
+<div class="columns is-centered ">
+<div class="column is-full-width">
+    <h2 class="title is-4" style="margin-top: 30px">BibTeX</h2>
+    <pre><code>@InProceedings{Zeng_2026_CVPR,
+    author    = {Zeng, Huimin and Bai, Yue and Wang, Hailing and Fu, Yun},
+    title     = {Physically Inspired Gaussian Splatting for HDR Novel View Synthesis},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2026},
+}</code></pre>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+
+  
+<footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>. Website source code based on the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
